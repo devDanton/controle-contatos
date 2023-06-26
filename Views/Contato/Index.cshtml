@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Lista de contatos";
+}
+
+<div class="text-center">
+
+<h1 class="display-4">Lista de contatos</h1>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <a class="btn btn-primary gap-2" role="button" style="display:flex; align-items:center; justify-content:center; title="Adicionar Contato" asp-controller="Contato" asp-action="Adicionar">
+        <ion-icon name="add-circle-outline" size="small"></ion-icon>
+        <span>Adicionar</span>
+    </a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Opções</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td contenteditable="true">Mark</td>
+            <td contenteditable="true">mark@gmail.com</td>
+            <td contenteditable="true">(55) 9922-2746</td>
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a type="button" class="btn btn-success" title="Editar" asp-controller="Contato" asp-action="Editar">
+                        <ion-icon name="pencil"></ion-icon>
+                    </a>
+                        <a type="button" class="btn btn-danger" title="Deletar" asp-controller="Contato" asp-action="Deletar">
+                        <ion-icon name="trash"></ion-icon>
+                    </a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+                <td contenteditable="true">Thron</td>
+                <td contenteditable ="true">Thornton@gmail.com</td>
+                <td contenteditable="true">(55) 9922-5446</td>
+                <td contenteditable="true">
+               <div class="btn-group" role="group" aria-label="Basic example">
+                    <a type="button" class="btn btn-success" title="Editar" asp-controller="Contato" asp-action="Editar">
+                        <ion-icon name="pencil"></ion-icon>
+                    </a>
+                        <a type="button" class="btn btn-danger" title="Deletar" asp-controller="Contato" asp-action="Deletar">
+                        <ion-icon name="trash"></ion-icon>
+                    </a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+                <td contenteditable="true">Adriel</td>
+                <td contenteditable="true">adriel@gmail.com</td>
+                <td contenteditable="true">(55) 9922-1246</td>
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a type="button" class="btn btn-success" title="Editar" asp-controller="Contato" asp-action="Editar">
+                        <ion-icon name="pencil"></ion-icon>
+                    </a>
+                    <a type="button" class="btn btn-danger" title="Deletar" asp-controller="Contato" asp-action="Deletar">
+                        <ion-icon name="trash"></ion-icon>
+                    </a>
+                </div>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
+</div>

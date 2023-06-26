@@ -1,0 +1,33 @@
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  font-size: 14px;
+  position: relative
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    background-color: #202024;
+    color: white;
+    height: 100vh;
+}
+
+.max-width {
+    max-width: 700px;
+}
+
+td[contenteditable=true]:focus{
+    background-color: #808080;
+    color: black;
+}
