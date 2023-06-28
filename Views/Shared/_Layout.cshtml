@@ -43,9 +43,6 @@
                                 </li>
                             </ul>
                         </li>
-                        @*<li class="nav-item">
-                            <a class="nav-link disabled">Disabled</a>
-                        </li>*@
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -66,26 +63,6 @@
             &copy; 2023 - Controle de Contatos
         </div>
     </footer>
-    <script>
-        $(document).ready(function () {
-            $('#tabela-dados').DataTable({
-                columnDefs: [{
-                    targets: [0, 1], // Índices das colunas editáveis (começando em 0)
-                    className: 'editable'
-                }]
-            });
-        });
-
-        $(document).on('click', '#tabela-dados td.editable', function () {
-            var valorAtual = $(this).text();
-            $(this).html('<input type="text" value="' + valorAtual + '">');
-        });
-
-        $(document).on('blur', '#tabela-dados td.editable input', function () {
-            var novoValor = $(this).val();
-            $(this).parent().text(novoValor);
-        });
-    </script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

@@ -7,13 +7,13 @@
 <h1 class="display-4">Lista de contatos</h1>
 
 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-    <a class="btn btn-primary gap-2" role="button" style="display:flex; align-items:center; justify-content:center; title="Adicionar Contato" asp-controller="Contato" asp-action="Adicionar">
+    <button type="button" onclick="adicionarLinha()" class="btn btn-primary gap-2" role="button" style="display:flex; align-items:center; justify-content:center;" title="Adicionar Contato" @*asp-controller="Contato" asp-action="Adicionar"*@>
         <ion-icon name="add-circle-outline" size="small"></ion-icon>
         <span>Adicionar</span>
-    </a>
+    </button>
 </div>
 
-<table class="table">
+<table class="table" id="table">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -31,12 +31,12 @@
             <td contenteditable="true">(55) 9922-2746</td>
             <td>
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <a type="button" class="btn btn-success" title="Editar" asp-controller="Contato" asp-action="Editar">
-                        <ion-icon name="pencil"></ion-icon>
-                    </a>
-                        <a type="button" class="btn btn-danger" title="Deletar" asp-controller="Contato" asp-action="Deletar">
+                    <button type="button" class="btn btn-success" title="Salvar">
+                            <ion-icon name="save"></ion-icon>
+                    </button>
+                    <button type="button" class="btn btn-danger" title="Deletar">
                         <ion-icon name="trash"></ion-icon>
-                    </a>
+                    </button>
                 </div>
             </td>
         </tr>
@@ -46,13 +46,13 @@
                 <td contenteditable ="true">Thornton@gmail.com</td>
                 <td contenteditable="true">(55) 9922-5446</td>
                 <td contenteditable="true">
-               <div class="btn-group" role="group" aria-label="Basic example">
-                    <a type="button" class="btn btn-success" title="Editar" asp-controller="Contato" asp-action="Editar">
-                        <ion-icon name="pencil"></ion-icon>
-                    </a>
-                        <a type="button" class="btn btn-danger" title="Deletar" asp-controller="Contato" asp-action="Deletar">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-success" title="Salvar">
+                        <ion-icon name="save"></ion-icon>
+                    </button>
+                    <button type="button" class="btn btn-danger" title="Deletar">
                         <ion-icon name="trash"></ion-icon>
-                    </a>
+                    </button>
                 </div>
             </td>
         </tr>
@@ -63,12 +63,12 @@
                 <td contenteditable="true">(55) 9922-1246</td>
             <td>
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <a type="button" class="btn btn-success" title="Editar" asp-controller="Contato" asp-action="Editar">
-                        <ion-icon name="pencil"></ion-icon>
-                    </a>
-                    <a type="button" class="btn btn-danger" title="Deletar" asp-controller="Contato" asp-action="Deletar">
+                        <button type="button" class="btn btn-success" title="Salvar">
+                        <ion-icon name="save"></ion-icon>
+                    </button>
+                    <button type="button" class="btn btn-danger" title="Deletar">
                         <ion-icon name="trash"></ion-icon>
-                    </a>
+                    </button>
                 </div>
             </td>
         </tr>

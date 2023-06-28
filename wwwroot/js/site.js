@@ -3,22 +3,78 @@
 
 // Write your JavaScript code.
 
-$(document).ready(function () {
-    $('#tabela-dados').editable({
-        /*columnDefs: [{
-            targets: [0, 5], // Índices das colunas editáveis (começando em 0)
-            className: 'editable'
-        }]*/
-    });
-});
+function adicionarLinha() {
+    // Obtém uma referência para a tabela
+    var tabela = document.getElementById("table");
 
+    var tbody = tabela.getElementsByTagName("tbody")[0];
+    if (!tbody) {
+        // Se não existir, cria o elemento tbody
+        tbody = document.createElement("tbody");
+        tabela.appendChild(tbody);
+    }
 
-$(document).ready(function () {
-    $('#tabela-dados').on('click', 'td[contenteditable="true"]', function () {
-        $(this).addClass('editing');
-    });
+    var tr = document.getElementsByTagName("tr")
+    var ultimoTr = tr[tr.length - 1];
 
-    $('#tabela-dados').on('blur', 'td.editing', function () {
-        $(this).removeClass('editing');
-    });
-});
+    var ultimoValorTr = ultimoTr.th;
+
+    // Cria uma nova linha
+    var novaLinha = tbody.insertRow();
+
+    // Cria células na nova linha
+    var th = document.createElement("th");
+    th.setAttribute("scope", "row");
+    th.innerText = tr.length-1;
+    novaLinha.appendChild(th);
+
+    var td1 = document.createElement("td");
+    td1.setAttribute("contenteditable", "true");
+    td1.innerText = "Nome";
+    novaLinha.appendChild(td1);
+
+    var td2 = document.createElement("td");
+    td2.setAttribute("contenteditable", "true");
+    td2.innerText = "Email";
+    novaLinha.appendChild(td2);
+
+    var td3 = document.createElement("td");
+    td3.setAttribute("contenteditable", "true");
+    td3.innerText = "Nº Telefone";
+    novaLinha.appendChild(td3);
+
+    var td4 = document.createElement("td");
+    var div = document.createElement("div");
+    div.setAttribute("class", "btn-group");
+    div.setAttribute("role", "group");
+    div.setAttribute("aria-label", "Salvar");
+
+    var editarLink = document.createElement("button");
+    editarLink.setAttribute("type", "button");
+    editarLink.setAttribute("class", "btn btn-success");
+    editarLink.setAttribute("title", "Salvar");
+    /*editarLink.setAttribute("asp-controller", "Contato");*/
+    /*editarLink.setAttribute("asp-action", "Editar");*/
+    var editarIcon = document.createElement("ion-icon");
+    editarIcon.setAttribute("name", "save");
+    editarLink.appendChild(editarIcon);
+    div.appendChild(editarLink);
+
+    var deletarLink = document.createElement("button");
+    /*deletarLink.setAttribute("type", "button");*/
+    deletarLink.setAttribute("class", "btn btn-danger");
+    deletarLink.setAttribute("title", "Deletar");
+   /* deletarLink.setAttribute("asp-controller", "Contato");
+    deletarLink.setAttribute("asp-action", "Deletar");*/
+    var deletarIcon = document.createElement("ion-icon");
+    deletarIcon.setAttribute("name", "trash");
+    deletarLink.appendChild(deletarIcon);
+    div.appendChild(deletarLink);
+
+    td4.appendChild(div);
+    novaLinha.appendChild(td4);
+
+    // Adiciona a nova linha à tabela
+    tbody.appendChild(novaLinha);
+
+}
