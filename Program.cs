@@ -1,3 +1,7 @@
+using ControleContatos.Data;
+using ControleContatos.Repositorio;
+using Microsoft.EntityFrameworkCore;
+
 namespace ControleContatos
 {
     public class Program
@@ -8,6 +12,14 @@ namespace ControleContatos
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+
+            /*var connectionString = "Server=./; Database=DB_SistemaContatos; User Id=sa; password=123456";*/
+
+
+            var connectionString = "Data Source=P6075\\SQLSERVER2022;Initial Catalog=DB_SistemaContatos;User ID=sa;Password=Serbele@2023; TrustServerCertificate=true;";
+            builder.Services.AddDbContext<BancoContext>(options => options.UseSqlServer(connectionString));
+            builder.Services.AddScoped<IContatoRepositorio, ContatoRepositorio>();
 
             var app = builder.Build();
 
