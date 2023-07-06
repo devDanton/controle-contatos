@@ -35,13 +35,13 @@
                         <td contenteditable="true">@contato.Email</td>
                         <td contenteditable="true">@contato.Celular</td>
                         <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-success" title="Salvar" asp-router-id="@contato.Id" asp-controller="Contato" asp-action="Editar">
-                                    <ion-icon name="save"></ion-icon>
-                                </button>
-                                <button type="button" class="btn btn-danger" title="Deletar" asp-router-id="@contato.Id" asp-controller="Contato" asp-action="Deletar">
+                            <div class="btn-group" role="group">
+                                <a class="btn btn-success" title="Editar" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="Editar">
+                                    <ion-icon name="pencil"></ion-icon>
+                                </a>
+                                <a class="btn btn-danger" title="Deletar" asp-route-id="@contato.Id" asp-controller="Contato" asp-action="Deletar">
                                     <ion-icon name="trash"></ion-icon>
-                                </button>
+                                </a>
                             </div>
                         </td>
                     </tr>

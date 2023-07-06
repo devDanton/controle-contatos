@@ -23,20 +23,45 @@ namespace ControleContatos.Controllers
             return View();
         }
 
-        public IActionResult Editar()
+        public IActionResult Editar(int id)
         {
-            return View();
+            ContatoModel contato = _contatoRepositorio.ListarPorId(id);
+            return View(contato);
         }
 
-        public IActionResult Deletar()
+        public IActionResult Deletar(int id)
         {
-            return View();
+            //Exibe o nome do usuário que está selecionado para a deleção
+            ContatoModel contato = _contatoRepositorio.ListarPorId(id);
+            return View(contato);
+        }
+
+        public IActionResult Apagar(int Id)
+        {
+            //Apaga de fato o usuário selecionado
+            _contatoRepositorio.Apagar(Id);
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
         public IActionResult Adicionar(ContatoModel contato)
-        {
+        {   
+            //Adiciona de fato o contato
+            if(ModelState.IsValid)
+            {
             _contatoRepositorio.Adicionar(contato);
+            return RedirectToAction("Index");
+            }
+
+            return View(contato);
+
+        }
+
+        [HttpPost]
+        public IActionResult Alterar(ContatoModel contato)
+        {
+            //Altera de fato as informações de contato.
+            _contatoRepositorio.Alterar(contato);
             return RedirectToAction("Index");
         }
     }

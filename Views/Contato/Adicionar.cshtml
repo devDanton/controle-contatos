@@ -7,20 +7,24 @@
     <h1 class="display-4 text-center">Adicionar Contato</h1>
         <div class="mb-3">
             <label for="Nome" class="form-label">Nome completo</label>
-            <input type="text" asp-for="Nome" class="form-control" id="Nome" aria-describedby="Nome" placeholder="Digite seu nome completo">
+            <input type="text" asp-for="Nome" class="form-control" id="Nome" aria-describedby="Nome" placeholder="Digite seu nome completo" required>
+            @Html.ValidationMessageFor(x => x.Nome)
             @*<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>*@
         </div>
         <div class="mb-3">
             <label for="Email" class="form-label">E-mail</label>
-            <input type="email" asp-for="Email" class="form-control" id="Email" placeholder="Digite seu E-mail">
+            <input type="email" asp-for="Email" class="form-control" id="Email" placeholder="Digite seu E-mail" required>
+            @Html.ValidationMessageFor(x => x.Email)
+
         </div>
         <div class="mb-3">
             <label for="Telefone" class="form-label">Telefone</label>
-            <input type="tel" asp-for="Celular" class="form-control" id="Telefone" placeholder="Digite seu Telefone">
+            <input type="tel" asp-for="Celular" class="form-control" id="Telefone" placeholder="Digite seu Telefone" required>
+            @Html.ValidationMessageFor(x => x.Celular)
         </div>
         <div class="text-center">
-            <button type="submit" class="btn btn-primary " title="Enviar">Enviar</button>
-            <a class="btn btn-secondary" role="button" title="Voltar" asp-controller="Contato" asp-action="Index">Voltar</a>
+            <button type="submit" class="btn btn-outline-success " title="Enviar">Enviar</button>
+            <a class="btn btn-outline-danger" role="button" title="Voltar" asp-controller="Contato" asp-action="Index">Voltar</a>
         </div>
     </form>
 </div>

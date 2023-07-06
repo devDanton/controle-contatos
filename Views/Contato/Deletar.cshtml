@@ -1,5 +1,14 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model ContatoModel
 @{
+    ViewData["title"] = "Confirmação apagar contato";
 }
+
+<div class="mx-auto d-flex flex-column">
+    <h3 class="display-3 text-center">Deseja deletar o contato</h3>
+        <input type="hidden" asp-for="Id"/>
+        <p class="text-center">(@Model.Nome)</p>
+        <div class="mb-3 mt-3 d-flex gap-2 justify-content-center">
+            <a class="btn btn-outline-danger " title="Confirmar" asp-controller="Contato" asp-action="Apagar" asp-route-id="@Model.Id" >Confirmar</a>
+            <a class="btn btn-outline-success" title="Cancelar" asp-controller="Contato" asp-action="Index">Cancelar</a>
+        </div>
+</div>

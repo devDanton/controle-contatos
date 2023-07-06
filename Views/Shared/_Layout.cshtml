@@ -44,15 +44,15 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    <form class="d-flex" role="search" method="get">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                        <button class="btn btn-outline-success" type="submit" asp-controller="Contato" asp-action="Buscar">Buscar</button>
                     </form>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container d-flex flex-column" style="">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
