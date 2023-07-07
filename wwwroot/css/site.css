@@ -31,3 +31,19 @@ td[contenteditable=true]:focus{
     background-color: #808080;
     color: black;
 }
+
+.field-validation-error {
+    color: #dc3545;
+    background-color: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.hover:hover {
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s, 0s, 0s;
+    transition-property: color, background-color, border-color, box-shadow;
+    cursor: pointer;
+}

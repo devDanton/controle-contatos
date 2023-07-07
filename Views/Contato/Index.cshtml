@@ -5,6 +5,28 @@
 
 <div class="text-center">
 
+    @*<button class="alert alert-warning close-alert" role="alert">
+        A simple warning alert—check it out!
+    </button>*@
+
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="d-flex flex-column justify-content-center">
+            <button class="alert alert-success center close-alert" role="alert">
+                @TempData["MensagemSucesso"]
+            </button>
+        </div>
+    }
+
+    @if(TempData["MensagemErro"] != null)
+    {
+        <div class="d-flex flex-column justify-content-center">
+            <button class="alert alert-success center close-alert" role="alert">
+                @TempData["MensagemErro"]
+            </button>
+        </div>
+    }
+
 <h1 class="display-4">Lista de contatos</h1>
     @*type="button" onclick="adicionarLinha()"*@
 <div class="d-grid gap-2 d-md-flex justify-content-md-start">

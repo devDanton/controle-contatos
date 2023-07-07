@@ -3,23 +3,24 @@
 }
 
 <div class="mx-auto">
+
     <form class="max-width mx-auto" asp-controller="Contato" asp-action="Adicionar" method="post">
     <h1 class="display-4 text-center">Adicionar Contato</h1>
         <div class="mb-3">
             <label for="Nome" class="form-label">Nome completo</label>
-            <input type="text" asp-for="Nome" class="form-control" id="Nome" aria-describedby="Nome" placeholder="Digite seu nome completo" required>
+            <input type="text" asp-for="Nome" class="form-control" id="Nome" aria-describedby="Nome" placeholder="Digite seu nome completo">
             @Html.ValidationMessageFor(x => x.Nome)
             @*<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>*@
         </div>
         <div class="mb-3">
             <label for="Email" class="form-label">E-mail</label>
-            <input type="email" asp-for="Email" class="form-control" id="Email" placeholder="Digite seu E-mail" required>
+            <input type="email" asp-for="Email" class="form-control" id="Email" placeholder="Digite seu E-mail">
             @Html.ValidationMessageFor(x => x.Email)
 
         </div>
         <div class="mb-3">
             <label for="Telefone" class="form-label">Telefone</label>
-            <input type="tel" asp-for="Celular" class="form-control" id="Telefone" placeholder="Digite seu Telefone" required>
+            <input type="tel" asp-for="Celular" class="form-control" id="Telefone" placeholder="Digite seu Telefone">
             @Html.ValidationMessageFor(x => x.Celular)
         </div>
         <div class="text-center">

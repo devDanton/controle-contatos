@@ -3,7 +3,12 @@
 
 // Write your JavaScript code.
 
-function adicionarLinha() {
+
+$('.close-alert').click(() => {
+    $('.alert').hide('hide')
+});
+function adicionarLinha()
+{
     // Obtém uma referência para a tabela
     var tabela = document.getElementById("table");
 
