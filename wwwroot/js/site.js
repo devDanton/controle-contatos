@@ -9,16 +9,16 @@
     })
 */
 
-let table = new DataTable('#table-contatos');
-
 $('.close-alert').click(() => {
     $('.alert').hide('hide')
 });
 
-$('#table-contatos').DataTable({
-    "ordering": true,
+
+let table = new DataTable('#table-contatos', {
+    "ordering": false,
     "paging": true,
     "searching": true,
+    "autoWidth": true,
     "oLanguage": {
         "sEmptyTable": "Nenhum registro encontrado na tabela",
         "sInfo": "Mostrar _START_ até _END_ de _TOTAL_ registros",
@@ -44,7 +44,8 @@ $('#table-contatos').DataTable({
     }
 });
 
-function adicionarLinha()
+
+/*function adicionarLinha()
 {
     // Obtém uma referência para a tabela
     var tabela = document.getElementById("table");
@@ -95,19 +96,19 @@ function adicionarLinha()
     editarLink.setAttribute("type", "button");
     editarLink.setAttribute("class", "btn btn-success");
     editarLink.setAttribute("title", "Salvar");
-    /*editarLink.setAttribute("asp-controller", "Contato");*/
-    /*editarLink.setAttribute("asp-action", "Editar");*/
+    *//*editarLink.setAttribute("asp-controller", "Contato");*//*
+    *//*editarLink.setAttribute("asp-action", "Editar");*//*
     var editarIcon = document.createElement("ion-icon");
     editarIcon.setAttribute("name", "save");
     editarLink.appendChild(editarIcon);
     div.appendChild(editarLink);
 
     var deletarLink = document.createElement("button");
-    /*deletarLink.setAttribute("type", "button");*/
+    *//*deletarLink.setAttribute("type", "button");*//*
     deletarLink.setAttribute("class", "btn btn-danger");
     deletarLink.setAttribute("title", "Deletar");
-   /* deletarLink.setAttribute("asp-controller", "Contato");
-    deletarLink.setAttribute("asp-action", "Deletar");*/
+   *//* deletarLink.setAttribute("asp-controller", "Contato");
+    deletarLink.setAttribute("asp-action", "Deletar");*//*
     var deletarIcon = document.createElement("ion-icon");
     deletarIcon.setAttribute("name", "trash");
     deletarLink.appendChild(deletarIcon);
@@ -119,4 +120,4 @@ function adicionarLinha()
     // Adiciona a nova linha à tabela
     tbody.appendChild(novaLinha);
 
-}
+}*/

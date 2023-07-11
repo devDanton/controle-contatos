@@ -28,8 +28,8 @@ body {
 }
 
 td[contenteditable=true]:focus{
-    background-color: #808080;
-    color: black;
+   /* background-color: #808080;
+    color: black;*/
 }
 
 .field-validation-error {
@@ -48,6 +48,13 @@ td[contenteditable=true]:focus{
     cursor: pointer;
 }
 
-#table-contatos {
-    
+#table-contatos_wrapper {
+    margin: 10px 0 0 0;
+}
+
+#table-contatos_paginate > a, #table-contatos_next {
+    color: #ffffff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    border-radius: .25rem;
 }
